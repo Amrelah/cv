@@ -15,8 +15,8 @@
         }
         td.star:hover{
             color: blue;
-            letter-spacing: 10px;
-            font-size: 15px;
+            letter-spacing: 8px;
+            font-size: 20px;
         }
         span{
             font-weight: bolder;
@@ -26,6 +26,21 @@
     </style>
 </head>
 <body>
+    <div onclick="dismiss()" id="contactdiv" style="position: fixed;width: 100%;height: 100%;background-color: black;opacity: 0.6;
+    margin-top: -10px;margin-left: -10px;display: none;z-index: auto;">
+    </div>
+    <div id="contactform"  style="top: 50%;left: 40%;background-color: white;padding: 20px;z-index: 10;position: fixed;display: none;
+    border-radius: 20px;">
+        <form style="padding: 20px;" action="mailto:amrellahdelil@gmail.com" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" name="Name" required ><br>
+            <label for="company">Company:</label><br>
+            <input type="text" name="Company" required><br>
+            <label for="message">Message:</label><br>
+            <textarea name="message" id="" cols="30" rows="5"></textarea><br>
+            <input type="submit" onsubmit="dismiss()"  value="Send" style="padding: 5px 10px;background-color: blue;color: white;border-radius: 10px;border-width: 0px;">
+        </form>
+    </div>
     <!-- left side -->
     <div style="float: left;width: 40%;max-width: 400px;">
             <img src="man icon.png" alt="Amrelah Delil" style="width: 100%;">
@@ -51,6 +66,10 @@
                     <td class="star">✯✯</td>
                 </tr>
             </Table>
+            <br><br>
+            <a href="https://github.com/Amrelah">Here is my Github Account</a>
+            <br><br>
+            <p onclick="Contact()">Contact Me</p>
     </div>
 
 
@@ -60,7 +79,7 @@
     <div style="float: right;width: 60%;">
             <div style="background-color: rgb(19, 17, 17);">
                 <br><br>
-                <h1 style="color: yellow;text-align: center;font-size: 200%;">AMRELAH DELIL</h1>
+                <h1 style="color: yellow;text-align: center;font-size: 6vw;">AMRELAH DELIL</h1>
                 <br>
                 <div style="float: left;padding-left: 10%; background-color: transparent; color: white;">Phone: <br> +251 928 66 74 00 <br> +251939 64 91 99</div>
                 <div style="float: right;padding-right: 15%;background-color: transparent; color: white">DoB: <br> Jan 27, 1997</div>
@@ -91,4 +110,15 @@
             </ul>
     </div>
 </body>
+<script>
+    function Contact(){
+       document.getElementById('contactdiv').style.display = 'block';
+       document.getElementById('contactform').style.display = 'block';
+    }
+    function dismiss()
+    {
+        document.getElementById('contactdiv').style.display = 'none';
+        document.getElementById('contactform').style.display = 'none';
+    }
+</script>
 </html>
