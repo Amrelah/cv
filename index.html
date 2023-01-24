@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMRELAH DELIL-CV</title>
     <style>
-        tr,td{
-            /* border: 1px solid black; */
-            padding-right: 20px;
-        }
-        td.star{
+        p.star{
            color: red;
+           font-size: 15px;
         }
-        td.star:hover{
+        p.star:hover{
             color: blue;
             letter-spacing: 8px;
             font-size: 20px;
@@ -21,16 +18,17 @@
         span{
             font-weight: bolder;
         }
-       
-
+        
+        
     </style>
 </head>
 <body>
     <div onclick="dismiss()" id="contactdiv" style="position: fixed;width: 100%;height: 100%;background-color: black;opacity: 0.6;
-    margin-top: -10px;margin-left: -10px;display: none;z-index: auto;">
+    margin-top: -10px;margin-left: -10px;display: none;">
     </div>
-    <div id="contactform"  style="top: 50%;left: 40%;background-color: white;padding: 20px;z-index: 10;position: fixed;display: none;
-    border-radius: 20px;">
+   
+   <div id="contactform"  style="background-color: white;padding: 10px;z-index: 10;position: fixed;display: none;
+    border-radius: 20px;top: 50%;left: 50%;transform: translate(-50%, -50%);">
         <form style="padding: 20px;" action="mailto:amrellahdelil@gmail.com" method="post">
             <label for="name">Name:</label><br>
             <input type="text" name="Name" required ><br>
@@ -52,20 +50,17 @@
                 <li>Bachlor's Degre,Computer Science <br> 3.9/4.0(97.5%) CGPA <br> Admas University (2021)</li>
             </ul>
             <h3>Language</h3>
-            <Table>
-                <tr>
-                    <td>Amharic</td>
-                    <td class="star">✯✯✯✯✯</td>
-                </tr>
-                <tr>
-                    <td>English</td>
-                    <td class="star">✯✯✯✯✯</td>
-                </tr>
-                <tr>
-                    <td>Arabic</td>
-                    <td class="star">✯✯</td>
-                </tr>
-            </Table>
+            <div style="display: inline-block;">
+                <p class="lang">Amharic</p>
+                <p class="lang">English</p>
+                <p class="lang">Arabic</p>
+            </div>
+            <div style="display: inline-block;position: absolute; left: 75px;">
+                <p class="star">✯✯✯✯✯</p>
+                <p class="star">✯✯✯✯✯</p>
+                <p class="star">✯✯</p>
+            </div>
+
             <br><br>
             <a href="https://github.com/Amrelah">Here is my Github Account</a>
             <br><br>
@@ -113,7 +108,8 @@
 <script>
     function Contact(){
        document.getElementById('contactdiv').style.display = 'block';
-       document.getElementById('contactform').style.display = 'block';
+       document.getElementById('contactform').style.display = 'inline-block';
+       document.getElementsByTagName('body').style.textalign = 'center';
     }
     function dismiss()
     {
